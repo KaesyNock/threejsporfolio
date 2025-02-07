@@ -13,11 +13,11 @@ camera.position.z = 5;
 
 // 3. Create and add a cube object
 const geometry = new THREE.DodecahedronGeometry();
-const material = new THREE.MeshBasicMaterial({ color: '#468585'});
+const material = new THREE.MeshLambertMaterial({ color: '#468585', emissive: '#468585'});
 const dodecahedron = new THREE.Mesh(geometry, material);
 
 const boxGeometry = new THREE.BoxGeometry(2, 0.1, 2);
-const boxMaterial = new THREE.MeshBasicMaterial({ color: '#B4B4B3'});
+const boxMaterial = new THREE.MeshStandardMaterial({ color: '#B4B4B3', emissive: '#B4B4B3'});
 const box = new THREE.Mesh(boxGeometry, boxMaterial);
 box.position.y = -1.5;
 
@@ -55,5 +55,7 @@ function animate() {
   
   renderer.render(scene, camera);
 }
+
+// 
 
 animate();
